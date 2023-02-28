@@ -148,7 +148,7 @@ html, body {
   
   input[type="submit"] {
     color: hsl(var(--bgColorH), var(--bgColorS), var(--bgColorL));
-    background: hsl(var(--fgColorH), var(--fgColorS), var(--fgColorL));
+    background:rgb(0, 48, 150);
     font-size: 0.75rem;
     font-weight: bold;
     margin-top: 0.625rem;
