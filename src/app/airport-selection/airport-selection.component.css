@@ -34,7 +34,7 @@ html, body {
     border-radius: var(--borderRadius);
     box-shadow: 0 1rem 1rem -0.75rem var(--border);
     display: flex;
-    justify-content: center;
+    justify-content:space-between;
     flex-direction: column;
     align-items: center;
     padding: 1rem;
@@ -209,12 +209,7 @@ html, body {
  
 /* Base styling */
 
-body {
-    width: 430px;
-    margin: 0 auto;
-    background-color: #F7CAC9;
-    font-family: 'Raleway', sans-serif;
-}
+
 
 .search__container {
     
