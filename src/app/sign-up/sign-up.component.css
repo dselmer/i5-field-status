@@ -67,7 +67,7 @@ html, body {
   
   form > div {
     order: 2;
-    margin:3% 0;
+    margin:.5% 0;
   }
   
   label {
