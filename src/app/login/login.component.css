@@ -34,8 +34,9 @@ html, body {
     border-radius: var(--borderRadius);
     box-shadow: 0 1rem 1rem -0.75rem var(--border);
     display: flex;
-    justify-content: center;
+  
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     padding: 1rem;
     position: relative;
@@ -46,7 +47,7 @@ html, body {
   form .email, form .email a {
     color: hsl(var(--fgColorH), var(--fgColorS), var(--fgColorL));
     font-size: 0.825rem;
-    order: 4;
+  
     text-align: center;
     margin-top: 0.25rem;
     outline: 1px dashed transparent;
@@ -66,18 +67,30 @@ html, body {
   }
   
   form > div {
-    order: 2;
+display: flex;
+flex-flow: column;
     margin:3% 0;
   }
+  #section-1{
+    order:1;
+  }
+  #section-2{
+    order:2;
+  }
+
+#section-3{
+  order:3;
+}
+#section-4{
+  order:4;
+}
   
   label {
     display: flex;
     flex-direction: column;
   }
   
-  .label-show-password {
-    order: 3;
-  }
+ 
   
   label > span {
     color: var(--borderDarker);
@@ -95,7 +108,7 @@ html, body {
   }
   
   label input {
-    order: 2;
+
     outline: none;
   }
   
@@ -221,4 +234,12 @@ html, body {
     background: hsl(var(--fgColorH), var(--fgColorS), var(--fgColorL));
   }
   
-  
+  @media only screen and (min-width: 768px) {
+    /* tablets and desktop */
+   form{
+    justify-content: space-evenly;
+   }
+  .text{
+    width: 100%;
+  };
+  }
