@@ -1,0 +1,47 @@
+<form>
+  <div class="outerflex-container">
+    <div class="flex-container">
+      <h2 class="pb">Photo</h2>
+
+      <h2 class="takephoto pb">Take a Photo</h2>
+
+      <input    
+        type="file"
+        id="environment"
+        capture="environment"
+        accept="image/*"
+      />
+
+      <div class="uploadPhoto ">
+        <input
+          type="file"
+          accept="image/*"
+          name="image"
+          id="file"
+          onchange="loadFile(event)"
+          style="display: none"
+        
+        />
+
+        <label for="file" style="cursor: pointer">Add A Photo</label>
+      </div>
+      <img id="output" width="50" />
+
+      <h2 class="">Description</h2>
+
+      <div class="textarea ">
+        <textarea
+          name="Description"
+          id="Descriptionbox"
+          cols="35"
+          rows="6"
+          placeholder="Describe the issue here"
+        ></textarea>
+      </div>
+
+      <div class="bottombuttons">
+        <button>Back</button><button>Submit</button>
+      </div>
+    </div>
+  </div>
+</form>
