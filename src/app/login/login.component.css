@@ -145,9 +145,9 @@ flex-flow: column;
     color:  hsl(var(--fgColorH), calc(var(--fgColorS) * 2), calc(var(--fgColorL) * 1.15));
   }
   
-  input {
-    border: 1px solid var(--border);
-    border-radius: var(--borderRadius);
+   input {
+    border: 1px solid  rgba(0, 0, 0, 0.125); 
+    border-radius:  0.125rem;
     box-sizing: border-box;
     font-size: 1rem;
     height: 2.25rem;
@@ -157,11 +157,12 @@ flex-flow: column;
     padding: 0.25rem 0.5rem;
     width: 15rem;
     transition: all 0.25s;
-  }
+  } 
   
   input[type="submit"] {
     color: hsl(var(--bgColorH), var(--bgColorS), var(--bgColorL));
-    background:rgb(0, 48, 150);
+    background:rgb(98, 68, 187);
+ 
     font-size: 0.75rem;
     font-weight: bold;
     margin-top: 0.625rem;
@@ -183,7 +184,7 @@ flex-flow: column;
   }
   
   input[type="submit"]:hover {
-    background: hsl(var(--fgColorH), var(--fgColorS), calc(var(--fgColorL) * 0.85));
+    background:#572c5f;
   }
   
   input[type="submit"]:active {
@@ -234,6 +235,13 @@ flex-flow: column;
     background: hsl(var(--fgColorH), var(--fgColorS), var(--fgColorL));
   }
   
+  button{
+    padding: 0;
+    background: none;
+    border:none;
+    color: #306090;
+    
+  }
   @media only screen and (min-width: 768px) {
     /* tablets and desktop */
    form{
