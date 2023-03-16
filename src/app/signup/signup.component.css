@@ -9,7 +9,12 @@ form{
     justify-content: center;
     min-width: 370px;
     max-width: 500px;
-  margin:0 auto;
+    max-height: 800px;
+    margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
   
   
