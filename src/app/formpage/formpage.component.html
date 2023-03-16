@@ -1,0 +1,30 @@
+
+<h2>Photos</h2> 
+
+<form method="post" enctype="multipart/form-data"> 
+<div> 
+    <!-- <label for="openCamera">Takes a Photo</label>  -->
+
+<input  
+type="file"  
+id="openCamera"  
+accept="image/*"  
+style="display: none;"
+name="file" multiple/> 
+</div> 
+<label for="openCamera" style="cursor: pointer;">Add A Photo</label>
+
+
+<p><img id="output" width="50"/></p>
+
+
+<h2>Description</h2>
+        
+<div class="textarea">
+<textarea name="Description" id="Descriptionbox" cols="35" rows="6" placeholder="Describe the issue here"></textarea>
+</div>
+
+
+<div class="bottombuttons">
+<button>Back</button><button>Submit</button></div>
+</div>
