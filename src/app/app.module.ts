@@ -7,6 +7,7 @@ import { LoginComponent } from './login/login.component';
 import { ReportFormComponent } from './report-form/report-form.component';
 import { SignupComponent } from './signup/signup.component';
 import { FormpageComponent } from './formpage/formpage.component';
+import { WebcamModule } from 'ngx-webcam';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { FormpageComponent } from './formpage/formpage.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    WebcamModule
   ],
   providers: [],
   bootstrap: [AppComponent]

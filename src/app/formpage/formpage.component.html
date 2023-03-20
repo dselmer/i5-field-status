@@ -1,21 +1,23 @@
+<div>
+  <!-- Check Permission/open Camera -->
+  <button (click)="checkPermissions()">Open Camera</button>
+  
+</div>
+<div>
+  <!-- webcame image will be shown here -->
+<webcam *ngIf="isShowing" [height]="400" [width]="400" [trigger]="$trigger" (imageCapture)="snapshot($event)" [imageQuality]="1"></webcam> 
+<br>
+<button (click)="captureImage()">{{btnLabel}}</button>
+<!-- or -->
+  <!-- <button *ngIf="isShowing"><webcam ></webcam></button> -->   
 
-<h2>Photos</h2> 
-
-<form method="post" enctype="multipart/form-data"> 
-<div> 
-    <!-- <label for="openCamera">Takes a Photo</label>  -->
-
-<input  
-type="file"  
-id="openCamera"  
-accept="image/*"  
-style="display: none;"
-name="file" multiple/> 
-</div> 
-<label for="openCamera" style="cursor: pointer;">Add A Photo</label>
+</div>
 
 
-<p><img id="output" width="50"/></p>
+  <!-- Preview Section -->
+  <div *ngIf="previewImage">
+  <img [src]="previewImage" height="90" width="150" >
+</div>
 
 
 <h2>Description</h2>
@@ -26,5 +28,9 @@ name="file" multiple/>
 
 
 <div class="bottombuttons">
-<button>Back</button><button>Submit</button></div>
+<button>Back</button><button>Submit</button>
+</div>
+
+
+   
 
