@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { WebcamImage } from 'ngx-webcam/public_api';
+import { Component, ɵisListLikeIterable } from '@angular/core';
+import { WebcamImage, WebcamMirrorProperties } from 'ngx-webcam/public_api';
 import { Observable, Subject } from 'rxjs';
 
 
@@ -11,40 +11,68 @@ import { Observable, Subject } from 'rxjs';
 export class FormpageComponent {
   stream:any = null;
   trigger: Subject<void> = new Subject();
+  // savedTriggers:Subject<void>[] = [];
   previewImage: string = '';
+  savedImages:string[] = [];  
   btnLabel: string = 'Take a Pic' 
   status!: string;
+
+
+  camIsShowing:boolean=false;
+  camIsStreaming: boolean=false;
+  displayCamera: boolean= false;
+  displayDescription: boolean= false;
+  formContainer: boolean= false;
+  imageBox: boolean=true;
+  imageBoxVisible: boolean =true;
+  formInitialized: boolean=true;
+  reopenCameraBtn: boolean=false;
 
 get $trigger(): Observable<void> {
     return this.trigger.asObservable(); 
 }
 
 snapshot(event: WebcamImage) {
-  console.log(event); 
+  // console.log(event); 
   this.previewImage = event.imageAsDataUrl;
-  this.btnLabel = 'Re-take Pic'
+
+
+  //save in array
+  const imageFromEvent = event.imageAsDataUrl;
+  this.savedImages.push(imageFromEvent);
 }
 
-  isShowing:boolean=false;
-  showVideo() {
-    this.isShowing=!this.isShowing;
+toggleReopenCam() {
+  this.reopenCameraBtn=!this.reopenCameraBtn;
+}
+  // create function that reads the src
+  // compares it to the l i s that
+  // removes it if there
+
+  removeImage(image:string) {
+    const indexOfImage = this.savedImages.indexOf(image);
+
+    if(indexOfImage != -1) {
+      this.savedImages.splice(indexOfImage,1);
+    }
   }
-  checkPermissions() {
+
+  getPermission() {
     navigator.mediaDevices.getUserMedia({
       video:{
         width: 500,
         height: 500
       }
     }).then((res) => {
-      console.log("response", res);
+      // console.log("response", res);
       this.stream = res;
       this.status = 'My camera is being accessed';
       this.btnLabel = 'Take a Pic';
-      if (!this.isShowing) {
-        this.isShowing=true;
+      if (!this.camIsShowing) {
+        this.camIsShowing=true;
       }
     }).catch(err =>{
-      console.log(err);
+      // console.log(err);
       if(err?.message === 'Permission denied') {
         this.status = 'Permission denied please try again by approving webcam access';
       } else {
@@ -55,20 +83,25 @@ snapshot(event: WebcamImage) {
 
   captureImage(){
      this.trigger.next();   
+     if (this.formInitialized==true){
+      this.formInitialized=false;
+     }
   }
 
 sumbit(){
   console.log(this.previewImage);
 }
 
-
-
-
-
-
+cameraOff() {
+  this.imageBoxVisible=false;
+  this.toggleReopenCam();
 }
 
-
-
+reopenCam() {
+    this.imageBoxVisible=true;
+      this.camIsShowing= true;
+    this.toggleReopenCam();
+}
+}
 
 

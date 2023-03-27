@@ -1,86 +1,162 @@
-label {
-    display: block;
-    font: 1rem 'Fira Sans', sans-serif;
-    margin: 0.4rem 0;
-    cursor: pointer;
-}
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
 
-/* div.camera {
-    text-align:center;
-    padding:3%;
-    border:thin solid black;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-  } */
-
-  input{
-    display: none;
-  }
-  label{
-    cursor:pointer;
-  }
-  
- 
-
-
-
-
-  .outerflex-container {
-    display: flex;
+.formpage-body {
+    background: linear-gradient(272.51deg, #F2F7FF -46.27%, #FEFEFF 87.17%), linear-gradient(180deg, rgba(237, 177, 77, 0.34) 0%, rgba(237, 177, 77, 0) 41.15%);
+    border: 6px solid #FFFFFF;
     width: 100vw;
     height: 100vh;
-    justify-content: center;
-    
-}
-.flex-container {
-    justify-content: center;
-    display: flex;
-    flex-direction: column;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    text-align: center;
-    align-items: center;
-    width: 500px;
-    background-color: #EAEAF3;
+    font-family: "Open Sans", sans-serif;
 }
 
-button {
-    appearance:none;
-    -webkit-appearance:none;
-    padding:10px;
-    border:none;
-    background-color:#0033A0;
-    color:#fff;
-    font-weight:600;
-    border-radius:5rem;
-    width:120px;
-    display:inline-block;
-    margin: 30px;
-    box-shadow:4px 4px 10px rgba(0,0,0,0.1);
-    
-  
-  }
-  button:hover {
-    background-color: #6244BB;
-  }
-.flex-container h2 {
-  color: #002244;
+.formpage-container {
+    width: 90%;
+    margin: 0 auto;
 }
+
+.header {
+    display: flex;
+    flex-direction: row-reverse;
+    width: 100%;
+    height: 50px;
+    align-items: center;
+    margin-top: 16px;
+}
+
+.closeButton {
+    width: 55px;
+    height: 45px;
+    background-color: rgba(105, 179, 231, 1);
+    border: none;
+    padding: 8px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+img.closeImage {
+    width: 80%;
+    height: 80%;
+}
+
+.imageBox {
+    height: 420px;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 50px;
+    border-radius: 10px;
+    margin-top: 16px;
+
+}
+
+.cameraImage {
+    margin: auto auto;
+    background-color: rgba(105, 179, 231, 1);
+    border-radius: 50%;
+    width: 160px;
+    height: 160px;
+    outline: none;
+    border: none;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
+    color: white;
+}
+
+.cameraImage img {
+    height: 60px;
+    width: auto;
+}
+
+.takePic {
+    position: absolute;
+    top: 88%;
+    left: 85%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(105, 179, 231, 1);
+    height: 65px;
+    width: 65px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+
+}
+
+.imageSection {
+    width: 100%;
+    height: 100%;
+    background-color: pink;
+    /* margin-bottom: 20px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    border-radius: 10px;
+}
+
+
+.webcam-wrapper video {
+    width: 900px;
+    height: 420px;
+    display: none !important;
+}
+
+.red {
+    background-color: red;
+}
+
+input {
+    display: none;
+}
+
+
+
+.instructionContainer {
+    text-align: center;
+}
+
+.instructionContainer h1 {
+    font-size: 24px;
+}
+
+.instructionContainer p {
+    color: #043C64;
+    font-size: 16px;
+    margin-top: 20px;
+}
+.screenshots {
+    display: flex;
+    border: solid green;
+}
+
+.innerDiv {
+    height: 50px;
+    
+}
+
+.screenshots div {
+    margin: 5px;
+    border-radius: 10px;
+}
+
+.screenshots div:hover {
+    outline: solid 2px blue;
+}
+
 
 textarea {
-    width:100%;
+    width: 100%;
     resize: none;
-    padding:15px;
-    border-radius:15px;
-    border:0;
+    padding: 15px;
+    border-radius: 15px;
+    border: 0;
     border-style: solid;
     border-width: .25px;
     border-color: #0033A0;
-    box-shadow:4px 4px 10px rgba(0,0,0,0.1);
-    
-  }
-  
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
+
+}
+
 
 .textarea textarea {
     width: auto;
