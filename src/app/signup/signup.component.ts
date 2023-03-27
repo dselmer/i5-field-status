@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
-import {NgForm} from '@angular/forms';
+
 
 @Component({
   selector: 'app-signup',
@@ -10,6 +10,8 @@ import {NgForm} from '@angular/forms';
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent {
+
+
 
   firstName: string ="";
   lastName: string ="";
@@ -20,6 +22,7 @@ export class SignupComponent {
 
   isSignup: boolean = false;
   erroMessage: string = "";
+
 
   constructor(private router: Router,private http: HttpClient) {}
 
@@ -32,7 +35,7 @@ export class SignupComponent {
       firstName: this.firstName,
       lastName:this.lastName,
       userName: this.userName,
-      email: this.email,
+      email: this.email, 
       password: this.password,
       isSignup:this.isSignup
     };

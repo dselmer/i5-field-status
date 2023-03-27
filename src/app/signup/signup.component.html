@@ -1,15 +1,16 @@
-<form>
+
+<form >
   <div>
     <h1>Sign up</h1>
   </div>
 
   <div>
     <label for="fname">First name:</label><br />
-    <input type="text" [(ngModel)]="firstName" id="fname" name="fname" /><br />
+    <input type="text" [(ngModel)]="firstName" id="fname" name="firstName" /><br />
   </div>
   <div>
     <label for="Lname">Last name:</label><br />
-    <input type="text" [(ngModel)]="lastName" id="Lname" name="Lname" /><br />
+    <input type="text" [(ngModel)]="lastName" id="Lname" name="lastName" /><br />
   </div>
   <div>
     <label for="username">User name:</label><br />
@@ -17,12 +18,12 @@
       type="text"
       [(ngModel)]="userName"
       id="Uname"
-      name="username"
+      name="userName"
     /><br />
   </div>
   <div>
     <label for="uemail">United Email:</label><br />
-    <input type="text" [(ngModel)]="email" id="u-email" name="uemail" /><br />
+    <input type="text" [(ngModel)]="email" id="u-email" name="email" /><br />
   </div>
   <div>
     <label for="password">password:</label><br />
@@ -40,3 +41,5 @@
     <a routerLink="/">Log In</a>
   </div>
 </form>
+
+

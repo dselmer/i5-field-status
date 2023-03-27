@@ -9,10 +9,10 @@
         <input
           type="text"
           [(ngModel)]="email"
-          [ngModelOptions]="{ standalone: true }"
           class="form-control"
-          id="stname"
+       name="email"
           placeholder="Enter Email"
+          required="required"
         />
       </div>
       <div class="form-group">
@@ -20,9 +20,9 @@
         <input
           type="password"
           [(ngModel)]="password"
-          [ngModelOptions]="{ standalone: true }"
           class="form-control"
           id="stname"
+          name="password"
           placeholder="Enter Password"
         />
       </div>
