@@ -11,21 +11,29 @@ import {NgForm} from '@angular/forms';
 })
 export class SignupComponent {
 
+  firstName: string ="";
+  lastName: string ="";
+  userName: string ="";
+
   email: string = '';
   password: string = '';
 
-  isLogin: boolean = true;
+  isSignup: boolean = false;
   erroMessage: string = "";
 
   constructor(private router: Router,private http: HttpClient) {}
 
-  login() {
+  signup() {
     console.log(this.email);
     console.log(this.password);
 
     let bodyData = {
+     
+      firstName: this.firstName,
+      lastName:this.lastName,
+      userName: this.userName,
       email: this.email,
-      password: this.password,
+      password: this.password
     };
 
         this.http.post("http://localhost:9992/student/login", bodyData).subscribe(  (resultData: any) => {
@@ -40,8 +48,8 @@ export class SignupComponent {
         } 
         else
          {
-          alert("Incorrect Email or Password");
-          console.log("Errror login");
+          alert(" Email or Password required");
+          console.log("Errror signup");
         }
       });
     }
