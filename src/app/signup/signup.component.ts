@@ -33,10 +33,11 @@ export class SignupComponent {
       lastName:this.lastName,
       userName: this.userName,
       email: this.email,
-      password: this.password
+      password: this.password,
+      isSignup:this.isSignup
     };
 
-        this.http.post("http://localhost:9992/student/login", bodyData).subscribe(  (resultData: any) => {
+        this.http.post("http://localhost:4200/", bodyData).subscribe(  (resultData: any) => {
         console.log(resultData);
 
         if (resultData.status) 

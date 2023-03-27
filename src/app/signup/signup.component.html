@@ -5,26 +5,33 @@
 
   <div>
     <label for="fname">First name:</label><br />
-    <input  type="text"
-    [(ngModel)]="email"
-    [ngModelOptions]="{ standalone: true }"
-    id="fname" name="fname" /><br />
+    <input type="text" [(ngModel)]="firstName" id="fname" name="fname" /><br />
   </div>
   <div>
     <label for="Lname">Last name:</label><br />
-    <input type="text" id="Lname" name="Lname" /><br />
+    <input type="text" [(ngModel)]="lastName" id="Lname" name="Lname" /><br />
   </div>
   <div>
     <label for="username">User name:</label><br />
-    <input type="text" id="Uname" name="username" /><br />
+    <input
+      type="text"
+      [(ngModel)]="userName"
+      id="Uname"
+      name="username"
+    /><br />
   </div>
   <div>
     <label for="uemail">United Email:</label><br />
-    <input type="text" id="u-email" name="uemail" /><br />
+    <input type="text" [(ngModel)]="email" id="u-email" name="uemail" /><br />
   </div>
   <div>
     <label for="password">password:</label><br />
-    <input type="password" id="password" name="password" /><br />
+    <input
+      type="text"
+      [(ngModel)]="password"
+      id="password"
+      name="password"
+    /><br />
   </div>
   <div id="input-container">
     <input type="submit" id="submit-btn" name="submit" value="sign up" />
@@ -33,6 +40,3 @@
     <a routerLink="/">Log In</a>
   </div>
 </form>
-
-
-
