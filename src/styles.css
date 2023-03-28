@@ -10,8 +10,10 @@
 }
 
 body{
-    height: 100vh;
-    display: flex;
+    /* height: 100vh; */
+    height: 100%;
+    width: 100%;
+    /* display: flex; */
     /* border: 10px solid green; */
 
 };

@@ -1,71 +1,105 @@
-
-
 <div class="formpage-body">
-
   <div class="formpage-container">
     <div class="header">
       <button class="closeButton">
-        <img class="closeImage" src="../../assets/images/close-icon.svg" alt="Close Window">
+        <img
+          class="closeImage"
+          src="../../assets/images/close-icon.svg"
+          alt="Close Window"
+        />
       </button>
-    </div> 
-    
-    <div class="imageBox" *ngIf="imageBoxVisible" >
-      
+    </div>
 
-      <div class="imageSection cam-permission" *ngIf="!camIsShowing" > 
-        <button class="cameraImage" (click)="getPermission()" >
-            <img src="../../assets/images/photo_camera_FILL1_wght300_GRAD200_opsz48.svg" alt="">
+    <div class="imageBox" [ngClass]="{ 'flash': isFlash }" *ngIf="imageBoxVisible">
+      <div class="imageSection cam-permission" *ngIf="!camIsShowing">
+        <button class="cameraImage" (click)="getPermission()">
+          <img
+            src="../../assets/images/photo_camera_FILL1_wght300_GRAD200_opsz48.svg"
+            alt=""
+          />
         </button>
       </div>
-     
-     
-      <button (click)="captureImage()" *ngIf="camIsShowing" class="imageSection red">
-        <webcam  [height]="900" [width]="800" [trigger]="$trigger" (imageCapture)="snapshot($event)" [imageQuality]="1"></webcam> 
-        <div class="takePic" ><img src="../../assets/images/photo_camera_FILL1_wght300_GRAD200_opsz48.svg" alt="">
-        </div>  
-      </button>
-      
-    </div>
-    
-    <div class="instructionContainer" *ngIf="!previewImage" >
-      <h1>Take Some Photos<br> of the Issue</h1> 
-          <p>Click on the camera icon to get<br>started</p>
-        </div>
-     
-     
-     
-     <div  class="formContainer">
-       <div *ngIf="previewImage">
 
-         <div class="screenshots">
-          <div class="innerDiv" *ngIf="!reopenCameraBtn">
+      <button
+        (click)="captureImage()"
+        *ngIf="camIsShowing"
+        class="imageSection red"
+      >
+        <webcam
+          [height]="900"
+          [width]="800"
+          [trigger]="$trigger"
+          (imageCapture)="snapshot($event)"
+          [imageQuality]="1"
+        ></webcam>
+        <div class="takePic">
+          <img
+            src="../../assets/images/photo_camera_FILL1_wght300_GRAD200_opsz48.svg"
+            alt=""
+          />
+        </div>
+      </button>
+    </div>
+
+    <div class="instructionContainer" *ngIf="!previewImage">
+      <h1>Take Some Photos<br />of the Issue</h1>
+      <p>Click on the camera icon to get<br />started</p>
+    </div>
+
+    <div class="formContainer">
+      <div *ngIf="previewImage">
+        <div class="screenshots">
+          <div class="screenshotText" *ngIf="!reopenCameraBtn">
             Swipe up on photo to remove
           </div>
-           <button class="innerDiv" *ngIf="reopenCameraBtn"
-           (click)="reopenCam()"> <img src="../../assets/images/add_a_photo_FILL1_wght300_GRAD200_opsz48.svg" alt="">
-           </button>
-           <div class="innerDiv" *ngFor='let image of savedImages'>
-             <img [src]="image" height="90" width="150" (click)="removeImage(image)" >
-           </div>
-       
-         </div>
-       
-       </div>
-       
-       
-       <div [hidden]="camIsShowing && !previewImage || formInitialized" class="textarea">
-          <h2>Description</h2>
-          <textarea (click)="cameraOff()" name="Description" id="Descriptionbox" cols="35" rows="6" placeholder="Describe the issue here"></textarea>
-       </div>
-       
-       
-       <div class="bottombuttons" [hidden]="!previewImage">
-       <button>Submit</button>
-       </div>
-       
-     </div>
-     
+          <button
+            class="innerDivCameraBtn"
+            *ngIf="reopenCameraBtn"
+            (click)="reopenCam()"
+          >
+            <div class="innerDivCircle">
+              <img
+                class="innerDivCameraPic"
+                src="../../assets/images/add_a_photo_FILL1_wght300_GRAD200_opsz48.svg"
+                alt=""
+              />
+            </div>
+          </button>
+        <div class="innerDiv-container">  
+          <div class="innerDiv" *ngFor="let image of savedImages">
+            <div class="preview-Image-container">
+            <img
+              [src]="image"
+              height="150"
+              width="150"
+              (click)="removeImage(image)"
+            />
+          </div>
+        </div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        [hidden]="(camIsShowing && !previewImage) || formInitialized"
+        class="textarea"
+      >
+        <h2>Description</h2>
+        <div>
+          <textarea
+            (click)="cameraOff()"
+            name="Description"
+            id="Descriptionbox"
+            cols="35"
+            rows="10"
+            placeholder="Describe the issue here"
+          ></textarea>
+        </div>
+      </div>
+
+      <div class="submitBtnDiv" [hidden]="!previewImage">
+        <button class="submitBtn">Submit</button>
+      </div>
     </div>
   </div>
-
-  
+</div>

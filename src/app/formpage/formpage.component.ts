@@ -1,7 +1,15 @@
-import { Component, ɵisListLikeIterable } from '@angular/core';
-import { WebcamImage, WebcamMirrorProperties } from 'ngx-webcam/public_api';
+import { Component, NgModule } from '@angular/core';
+import { WebcamImage } from 'ngx-webcam/public_api';
 import { Observable, Subject } from 'rxjs';
+import { NgScrollbarModule } from 'ngx-scrollbar';
 
+@NgModule({
+  imports: [
+    NgScrollbarModule
+  ],
+  
+})
+export class AppModule { }
 
 @Component({
   selector: 'app-formpage',
@@ -16,8 +24,6 @@ export class FormpageComponent {
   savedImages:string[] = [];  
   btnLabel: string = 'Take a Pic' 
   status!: string;
-
-
   camIsShowing:boolean=false;
   camIsStreaming: boolean=false;
   displayCamera: boolean= false;
@@ -27,6 +33,8 @@ export class FormpageComponent {
   imageBoxVisible: boolean =true;
   formInitialized: boolean=true;
   reopenCameraBtn: boolean=false;
+  isFlash: boolean=false;
+  
 
 get $trigger(): Observable<void> {
     return this.trigger.asObservable(); 
@@ -82,6 +90,17 @@ toggleReopenCam() {
   }
 
   captureImage(){
+    console.log("cat palace")
+
+    this.isFlash=true;
+
+    setTimeout(() => {
+      console.log("dawg castle");
+      this.isFlash=false;
+
+    }, 200);
+    
+
      this.trigger.next();   
      if (this.formInitialized==true){
       this.formInitialized=false;
