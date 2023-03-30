@@ -9,6 +9,9 @@ import { ReportFormComponent } from './report-form/report-form.component';
 import { SignupComponent } from './signup/signup.component';
 import { FormpageComponent } from './formpage/formpage.component';
 
+import {FormsModule} from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,7 +22,9 @@ import { FormpageComponent } from './formpage/formpage.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule
 
   ],
   providers: [],
