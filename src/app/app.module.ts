@@ -8,7 +8,7 @@ import { LoginComponent } from './login/login.component';
 import { ReportFormComponent } from './report-form/report-form.component';
 import { SignupComponent } from './signup/signup.component';
 import { FormpageComponent } from './formpage/formpage.component';
-import { WebcamModule } from 'ngx-webcam';
+
 
 import {FormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
@@ -24,7 +24,8 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    WebcamModule
+
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
