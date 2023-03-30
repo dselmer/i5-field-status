@@ -1,14 +1,9 @@
 import { Component, NgModule } from '@angular/core';
-import { WebcamImage } from 'ngx-webcam/public_api';
-import { Observable, Subject } from 'rxjs';
-import { NgScrollbarModule } from 'ngx-scrollbar';
 
-@NgModule({
-  imports: [
-    NgScrollbarModule
-  ],
+import {WebcamModule,WebcamImage} from 'ngx-webcam';
+import { Observable, Subject } from 'rxjs';
+
   
-})
 export class AppModule { }
 
 @Component({
