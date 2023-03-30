@@ -1,9 +1,274 @@
-label {
-    display: block;
-    font: 1rem 'Fira Sans', sans-serif;
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+.formpage-body {
+    border: 6px solid #FFFFFF;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    font-family: "Open Sans", sans-serif;
+    background: linear-gradient(272.51deg, #F2F7FF -46.27%, #FEFEFF 87.17%), linear-gradient(180deg, rgba(237, 177, 77, 0.34) 0%, rgba(237, 177, 77, 0) 41.15%);
+    background-color: coral;
 }
 
-input,
-label {
-    margin: 0.4rem 0;
+.formpage-container {
+    width: 90%;
+    height: 100%;
+    min-height: 98vh;
+    margin: 0 auto;
+}
+
+
+.header {
+    display: flex;
+    flex-direction: row-reverse;
+    width: 100%;
+    height: 50px;
+    align-items: center;
+    margin-top: 16px;
+}
+
+.closeButton {
+    width: 55px;
+    height: 45px;
+    background-color: rgba(105, 179, 231, 1);
+    border: none;
+    padding: 8px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+img.closeImage {
+    width: 80%;
+    height: 80%;
+}
+
+.imageBox {
+    height: 420px;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 25px;
+    border-radius: 10px;
+    margin-top: 16px;
+
+}
+
+.flash {
+    outline: solid 5px rgba(105, 179, 231, 1);
+}
+
+.cameraImage {
+    margin: auto auto;
+    background-color: rgba(105, 179, 231, 1);
+    border-radius: 50%;
+    width: 160px;
+    height: 160px;
+    outline: none;
+    border: none;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
+    color: white;
+}
+
+.cameraImage img {
+    height: 60px;
+    width: auto;
+}
+
+.takePic {
+    position: absolute;
+    top: 88%;
+    left: 85%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(105, 179, 231, 1);
+    height: 65px;
+    width: 65px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.imageSection {
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    border-radius: 10px;
+    border: #043C64;
+    border-width: 1px;
+}
+
+
+.takePic:active {
+    background-color: #006080;
+    color: white;
+  }
+
+.webcam-wrapper video {
+    width: 900px;
+    height: 420px;
+    display: none !important;
+}
+
+.red {
+    background-color: white;
+}
+
+input {
+    display: none;
+}
+
+.instructionContainer {
+    text-align: center;
+}
+
+.instructionContainer h1 {
+    font-size: 24px;
+    margin-top: 45px;
+}
+
+.instructionContainer p {
+    color: #043C64;
+    font-size: 16px;
+    margin-top: 20px;
+}
+.screenshots {
+    display: flex;
+    margin-bottom: 25px;
+    overflow-x: scroll;
+    width: 100%;
+    padding-bottom: 10px;
+}
+
+.innerDiv-container {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.preview-Image-container {
+    width: 95px;
+    height: 130px;
+    overflow: hidden;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10px;
+    transform: scaleX(-1);
+}
+
+.screenshotText {
+    height: 130px;
+    width: 100px;
+    font-family: "Open Sans", sans-serif;
+    font-size: 22px;
+    min-width: 100px;
+    color: #006080;
+    margin-right: 5px;
+    margin-top: 10px;
+    font-weight: 600;
+}
+
+.innerDiv img{
+    height: 130px;
+    width: 200px;
+    margin: 8px;
+    border-radius: 10px;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.innerDivCameraBtn {
+    background-color: rgba(105, 179, 231, 1);
+    height: 130px;
+    width: 100px;
+    border: none;
+    border-radius: 10px;
+    align-self: center;
+    min-width: 75px;
+    min-height: 130px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+ .innerDivCircle {
+    border-radius: 50%;
+    background-color: white;
+    margin: auto auto;
+    width: 65px;
+    height: 65px;
+    outline: none;
+    border: none;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-evenly;
+} 
+
+.innerDivCameraPic {
+    width: 45px; 
+    height: 45px; 
+    outline: none;
+    border: none;
+    justify-content: center;
+    align-content: center;
+    align-self: center;
+}
+
+
+::-webkit-scrollbar-thumb {
+    background-color: #0F5369;
+    border-radius: 10px;
+  }
+
+h2 {
+    letter-spacing: 2px;
+    margin-left: 13px;
+}
+textarea {
+    width: 100%;
+    resize: none;
+    padding: 15px;
+    border-radius: 15px;
+    border: none;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 15px;
+    box-sizing: content-box;
+    background-color: rgba(0, 96, 128, 0.07);
+}
+
+textarea::placeholder {
+    color: #0F5369;
+    font-size: 18px;
+  }
+
+.textarea textarea {
+    width: 90%;
+    height: auto;
+    font-family: "Open Sans", sans-serif;
+    color: #0F5369;
+    font-size: 18px;
+}
+
+
+.submitBtn {
+    background-color: #006080;
+    height: 75px;
+    width: 340px;
+    border: none;
+    border-radius: 10px;
+    font-family: "Open Sans", sans-serif;
+    font-size: 22px;
+    color: #FFFFFF;
+    margin-top: 30px;
+    margin-bottom: 40px;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
+    align-self: center;
+    letter-spacing: 5px;
+   
 }
