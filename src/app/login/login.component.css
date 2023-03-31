@@ -1,7 +1,7 @@
 
 
 form{
-height: 80%;
+height: 85%;
 width: 30%;
   border-radius: 10px;
   box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
@@ -22,7 +22,11 @@ width: 30%;
 }
 
 .title{
-  margin-bottom: 10%;
+ display: flex;
+ flex-flow:column;
+ align-items: center;
+ justify-content: space-evenly;
+ margin-bottom: 5%;
 }
 
 
@@ -66,3 +70,4 @@ a{
   text-decoration: none;
   
 }
+
