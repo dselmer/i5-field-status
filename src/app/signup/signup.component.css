@@ -22,7 +22,7 @@ form{
   
   form > div{
     text-align: center;
-    margin: 3%;
+  margin: 1%;
     /* border:2px solid red; */
     width: 50%;
   }
@@ -37,17 +37,18 @@ form{
   input[type="submit"]{
     background-color: #006080;
     height: 100%;
-    width: 100%;
+    width: 80%;
     border-radius: 10px;
     font-family: "Open Sans", sans-serif;
-    font-size: 18px;
+    font-size: 14px;
     text-align: center;
     color: #FFFFFF;
-    padding: 8%;
+    padding: 6% 0;
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
     align-self: center;
     letter-spacing: 5px;
   }
+  
   
   input[type="text"],input[type="password"] {
     padding: 2% 10%;
