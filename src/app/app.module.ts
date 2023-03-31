@@ -26,7 +26,8 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserModule,
     WebcamModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
