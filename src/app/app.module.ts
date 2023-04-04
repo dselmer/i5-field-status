@@ -26,6 +26,8 @@ import { RouterModule } from '@angular/router';
     BrowserModule,
     WebcamModule,
     AppRoutingModule,
+    FormsModule,
+    HttpClientModule
     RouterModule,
     FormsModule
   ],
