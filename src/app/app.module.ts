@@ -11,7 +11,8 @@ import { FormpageComponent } from './formpage/formpage.component';
 
 
 import {FormsModule} from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
+
 
 @NgModule({
   declarations: [
@@ -19,13 +20,13 @@ import { HttpClientModule } from '@angular/common/http';
     LoginComponent,
     ReportFormComponent,
     SignupComponent,
-
     FormpageComponent
   ],
   imports: [
     BrowserModule,
     WebcamModule,
     AppRoutingModule,
+    RouterModule,
     FormsModule
   ],
   providers: [],

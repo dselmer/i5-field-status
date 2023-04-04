@@ -8,7 +8,6 @@
     flex-direction: column;
     font-family: "Open Sans", sans-serif;
     background: linear-gradient(272.51deg, #F2F7FF -46.27%, #FEFEFF 87.17%), linear-gradient(180deg, rgba(237, 177, 77, 0.34) 0%, rgba(237, 177, 77, 0) 41.15%);
-    background-color: coral;
 }
 
 .formpage-container {
@@ -52,7 +51,6 @@ img.closeImage {
     margin-bottom: 25px;
     border-radius: 10px;
     margin-top: 16px;
-
 }
 
 .flash {
@@ -75,6 +73,8 @@ img.closeImage {
     height: 60px;
     width: auto;
 }
+
+
 
 .takePic {
     position: absolute;
@@ -102,7 +102,11 @@ img.closeImage {
     border-radius: 10px;
     border: #043C64;
     border-width: 1px;
-}
+    background: url(../../assets/images/FadedFSLogo.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}   
 
 
 .takePic:active {

@@ -1,9 +1,15 @@
 import { Component, NgModule } from '@angular/core';
-
 import {WebcamModule,WebcamImage} from 'ngx-webcam';
 import { Observable, Subject } from 'rxjs';
+// import { Router } from '@angular/router';
 
+
+@NgModule({
+  imports: [
+    WebcamModule
+  ],
   
+})
 export class AppModule { }
 
 @Component({
@@ -14,7 +20,6 @@ export class AppModule { }
 export class FormpageComponent {
   stream:any = null;
   trigger: Subject<void> = new Subject();
-  // savedTriggers:Subject<void>[] = [];
   previewImage: string = '';
   savedImages:string[] = [];  
   btnLabel: string = 'Take a Pic' 
@@ -31,16 +36,20 @@ export class FormpageComponent {
   isFlash: boolean=false;
   
 
+
+
+
+  
+
 get $trigger(): Observable<void> {
     return this.trigger.asObservable(); 
 }
 
-snapshot(event: WebcamImage) {
-  // console.log(event); 
+snapshot(event: WebcamImage) { 
   this.previewImage = event.imageAsDataUrl;
 
 
-  //save in array
+
   const imageFromEvent = event.imageAsDataUrl;
   this.savedImages.push(imageFromEvent);
 }
@@ -48,9 +57,7 @@ snapshot(event: WebcamImage) {
 toggleReopenCam() {
   this.reopenCameraBtn=!this.reopenCameraBtn;
 }
-  // create function that reads the src
-  // compares it to the l i s that
-  // removes it if there
+
 
   removeImage(image:string) {
     const indexOfImage = this.savedImages.indexOf(image);
@@ -67,7 +74,6 @@ toggleReopenCam() {
         height: 500
       }
     }).then((res) => {
-      // console.log("response", res);
       this.stream = res;
       this.status = 'My camera is being accessed';
       this.btnLabel = 'Take a Pic';
@@ -75,7 +81,6 @@ toggleReopenCam() {
         this.camIsShowing=true;
       }
     }).catch(err =>{
-      // console.log(err);
       if(err?.message === 'Permission denied') {
         this.status = 'Permission denied please try again by approving webcam access';
       } else {
@@ -116,6 +121,17 @@ reopenCam() {
       this.camIsShowing= true;
     this.toggleReopenCam();
 }
+
+// constructor(private router: Router) { }
+// constructor() { }
+
+// goToARDemo() {
+//   this.router.navigate(['/ardemo']);
+// }
+
 }
+
+
+
 
 

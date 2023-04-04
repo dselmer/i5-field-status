@@ -10,7 +10,11 @@
       </button>
     </div>
 
-    <div class="imageBox" [ngClass]="{ 'flash': isFlash }" *ngIf="imageBoxVisible">
+    <div
+      class="imageBox"
+      [ngClass]="{ flash: isFlash }"
+      *ngIf="imageBoxVisible"
+    >
       <div class="imageSection cam-permission" *ngIf="!camIsShowing">
         <button class="cameraImage" (click)="getPermission()">
           <img
@@ -65,17 +69,17 @@
               />
             </div>
           </button>
-        <div class="innerDiv-container">  
-          <div class="innerDiv" *ngFor="let image of savedImages">
-            <div class="preview-Image-container">
-            <img
-              [src]="image"
-              height="150"
-              width="150"
-              (click)="removeImage(image)"
-            />
-          </div>
-        </div>
+          <div class="innerDiv-container">
+            <div class="innerDiv" *ngFor="let image of savedImages">
+              <div class="preview-Image-container">
+                <img
+                  [src]="image"
+                  height="150"
+                  width="150"
+                  (click)="removeImage(image)"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </div>
