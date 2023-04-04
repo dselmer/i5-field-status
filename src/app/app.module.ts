@@ -10,8 +10,10 @@ import { SignupComponent } from './signup/signup.component';
 import { FormpageComponent } from './formpage/formpage.component';
 
 
-import {FormsModule} from '@angular/forms';
+// import {FormsModule} from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -27,7 +29,7 @@ import { RouterModule } from '@angular/router';
     WebcamModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
     RouterModule,
     FormsModule
   ],
